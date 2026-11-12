@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private int speed = 3;
+    [SerializeField] private Rigidbody rbPlayer;
+    [SerializeField] private float speed = 3.0f;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -11,8 +12,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        rbPlayer.AddForce(0.0f, 0.0f, speed);
     }
 }
